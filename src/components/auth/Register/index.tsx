@@ -32,12 +32,14 @@ const RegisterPage = () => {
             <InputGroup 
               label="Прізвище"
               field="surname"
+              value=""
               onChange={handleChange}
             />
 
             <InputGroup 
               label="Ім'я"
               field="name"
+              value=""
               onChange={handleChange}
             />
 
