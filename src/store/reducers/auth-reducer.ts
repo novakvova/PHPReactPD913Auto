@@ -16,7 +16,10 @@ export const authReducer = (state=inialState, action: AuthAction) : AuthState =>
         }
         case AuthActionTypes.LOGIN_AUTH_SUCCESS: {
             return {
-                ...state, loading: false, isAuth: true, user: action.payload
+                ...state, 
+                    loading: false, 
+                    isAuth: true, 
+                    user: action.payload
             };
         }
         case AuthActionTypes.LOGIN_AUTH_ERROR: {

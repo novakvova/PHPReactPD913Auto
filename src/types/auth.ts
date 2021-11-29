@@ -9,6 +9,12 @@ export interface IUser {
     image: string
 }
 
+export interface ILoginResponse {
+    access_token: string,
+    expires_in: number,
+    user: IUser
+}
+
 export interface AuthState {
     user: null|IUser,
     isAuth: boolean,

@@ -25,6 +25,7 @@ const LoginPage : FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     loginUser(state);
+    
     //console.log("submit form", state);
   }
 
