@@ -33,6 +33,7 @@ const RegisterPage = () => {
               label="Прізвище"
               field="surname"
               value=""
+              errors={[]}
               onChange={handleChange}
             />
 
@@ -40,6 +41,7 @@ const RegisterPage = () => {
               label="Ім'я"
               field="name"
               value=""
+              errors={[]}
               onChange={handleChange}
             />
 
