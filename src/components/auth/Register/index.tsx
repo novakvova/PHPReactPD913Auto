@@ -29,7 +29,7 @@ const RegisterPage = () => {
         <div className="col-md-6 offset-md-3">
           <h1 className="text-center">Реєстрація на сайті</h1>
           <form onSubmit={handleSubmit}>
-            <InputGroup 
+            {/* <InputGroup 
               label="Прізвище"
               field="surname"
               value=""
@@ -43,7 +43,7 @@ const RegisterPage = () => {
               value=""
               errors={[]}
               onChange={handleChange}
-            />
+            /> */}
 
             <button type="submit" className="btn btn-primary">
               Реєстрація

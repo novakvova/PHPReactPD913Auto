@@ -1,24 +1,32 @@
-type InputGroupProps = {
-  label: string;
-  field: string;
-  value: string;
-  errors: Array<string>;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  type?: string;
-};
+import { FC, InputHTMLAttributes } from "react";
+import classNames from 'classnames';
 
-const InputGroup = ({ label, field, value, errors, onChange, type = "text" }: InputGroupProps) => {
+interface InputGroupProps extends InputHTMLAttributes<HTMLInputElement> {
+  label: string,
+  field: string,
+  touched?: boolean | null,
+  error?: string | null,
+  type?: "text"|"email"|"password"
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void,
+}
+
+const InputGroup: FC<InputGroupProps> = ({label, field, onChange, touched=null, error=null, type="text"}: InputGroupProps) => {
   return (
     <div className="mb-3">
       <label htmlFor={field} className="form-label">
         {label}
       </label>
-      <input type={type} 
-        className="form-control" 
+      <input
+        type={type}
+        name={field}
+        className={classNames("form-control",
+          {"is-invalid": touched && error},
+          {"is-valid": touched && !error}
+        )}
+        id={field}
         onChange={onChange}
-        value={value}
-        id={field} name={field} />
-      {errors && errors.map((x, i) => <span className="text-danger" key={i}>{x}</span>)}
+      />
+      {(touched && error) && <div className="invalid-feedback">{error}</div>}
     </div>
   );
 };
