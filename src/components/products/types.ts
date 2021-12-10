@@ -9,8 +9,8 @@ export interface IProductItem {
 } 
 
 export interface IProductsResponse {
-    success: boolean;
-    message: string;
+    current_page: number;
+    from: number;
     data: Array<IProductItem>;
 }
 
