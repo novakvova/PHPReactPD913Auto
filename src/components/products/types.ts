@@ -10,18 +10,24 @@ export interface IProductItem {
 
 export interface IProductsResponse {
     current_page: number;
-    from: number;
+    last_page: number;
     data: Array<IProductItem>;
+}
+
+export interface IProductSearch {
+    page?: null|string|number,
+    name?: null|string
 }
 
 export interface ProductsState {
     products: Array<IProductItem>;
+    last_page: number;
 }
 
 
 export interface FetchProductsAction {
     type: ProductsActionTypes.FETCH_PRODUCTS,
-    payload: Array<IProductItem>
+    payload: ProductsState
 }
 
 export type ProductActions = FetchProductsAction;
