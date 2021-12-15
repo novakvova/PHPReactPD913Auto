@@ -8,6 +8,12 @@ export interface IProductItem {
     detail: string;
 } 
 
+export interface IProductCreate {
+    name: string,
+    detail: string,
+    file?: FileList[],
+}
+
 export interface IProductsResponse {
     current_page: number;
     last_page: number;
